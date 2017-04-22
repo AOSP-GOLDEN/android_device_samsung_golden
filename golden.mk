@@ -242,6 +242,9 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# Hardware repo
+$(call inherit-product, hardware/u8500/Android.mk)
+
 # new opensource libs
 PRODUCT_PACKAGES += \
     gralloc.montblanc \
