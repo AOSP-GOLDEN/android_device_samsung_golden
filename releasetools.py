@@ -25,18 +25,7 @@ LOCAL_DIR = os.path.dirname(os.path.abspath(__file__))
 TARGET_DIR = os.getenv('OUT')
 UTILITIES_DIR = os.path.join(TARGET_DIR, 'symbols')
 
-def FullOTA_Assertions(info):
-  sys.setrecursionlimit(100000)
-
-  info.output_zip.write(os.path.join(TARGET_DIR, "restorecon.sh"), "restorecon.sh")
-
-  info.script.AppendExtra(
-        ('package_extract_file("restorecon.sh", "/tmp/restorecon.sh");\n'
-         'set_perm(0, 0, 0777, "/tmp/restorecon.sh");'))
-
 def FullOTA_InstallEnd(info):
-  info.script.AppendExtra('assert(run_program("/tmp/restorecon.sh") == 0);')
-
 # Symlink some dependencies of libcscall.so
  
   info.script.AppendExtra('symlink("/system/lib/ste_omxcomponents/libste_dec_amr.so", "/system/lib/libste_dec_amr.so");')
