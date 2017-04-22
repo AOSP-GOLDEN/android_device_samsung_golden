@@ -1,3 +1,0 @@
-type rtos.itdispatcher.itdispatcherType {
-    requires exception.handler as it[32] optional
-}
