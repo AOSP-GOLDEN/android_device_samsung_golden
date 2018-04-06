@@ -22,4 +22,4 @@
 /devices/platform/musb-ux500.0/musb-hdrc*  	      auto	   auto	    defaults		  voldmanaged=usb:auto
 
 # zRAM
-/dev/block/zram0                                      none         swap    defaults               zramsize=134217728
+/dev/block/zram0                                      none         swap    defaults               zramsize=536870912
